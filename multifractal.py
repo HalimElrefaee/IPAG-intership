@@ -56,11 +56,11 @@ def tauq(image, H=2,q=0,kmaxscale=0.05,kminscale=0.1):
             for i4 in range(3):
                 
                 S11=np.zeros((M,nb,na))
-                for i2 in range(i4*M,(i4+1)*M):
+                for i2 in range(0,M):
                     
                     for i3 in range(0,N):
                         
-                        W1=wt[i2,i3,:,:]
+                        W1=wt[i2+i4*M,i3,:,:]
                         S11[i2,:,:]= S11[i2,:,:] + np.abs(W1)**h
                         
                     S1[i4,i1,i2]=np.sum(S11[i2,:,:]) * delta / (float(N) * na * nb)

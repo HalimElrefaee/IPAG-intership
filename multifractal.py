@@ -40,11 +40,9 @@ def tauq(image, H=2,q=0,kmaxscale=0.05,kminscale=0.1):
     b=np.where(wav_k>=kminscale)[0][0]
     ab=range(a,b+1)
     
-    ko= 5.336
-    delta = (2.*np.sqrt(-2.*np.log(.75)))/ko
-    N = int(np.pi/delta)
-    #N=wt.shape[1]
-    #delta=np.pi/N
+
+    N=wt.shape[1]
+    delta=np.pi/N
     M=np.size(wav_k)
     
     if q!=0:
